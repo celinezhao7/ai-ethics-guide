@@ -9,3 +9,5 @@ openai==2.24.0
 
 # HTTP requests library (optional, useful for direct API calls)
 requests==2.32.5
+
+faiss-cpu==1.7.4
