@@ -53,7 +53,7 @@ body { font-family: Georgia, serif; background-color: #F5F0FF; }
 """, unsafe_allow_html=True)
 
 st.title("💬 AI Ethics Educator")
-st.markdown("Ask me anything about AI ethics. I’ll respond thoughtfully!")
+st.markdown("This chatbot draws on UCSB policy, campus journalism, and peer-reviewed research.")
 
 # -----------------------------
 # Start a new conversation button
