@@ -101,3 +101,42 @@ if prompt := st.chat_input("Type your question about AI ethics..."):
     st.session_state.messages.append({"role": "assistant", "content": reply_text})
     save_messages()
     st.markdown(f"<div class='assistant-bubble'>{reply_text}</div>", unsafe_allow_html=True)
+
+    # Detect Streamlit theme (light or dark)
+theme = st.get_option("theme.base")  # returns "light" or "dark"
+
+# Set bubble colors based on theme
+if theme == "dark":
+    user_bg = "#4a2c4c"        # dark purple for user bubble
+    assistant_bg = "#6a4c8b"   # lighter dark purple for assistant bubble
+    text_color = "#ffffff"      # white text
+else:
+    user_bg = "#f6e6f1"         # light pink for user
+    assistant_bg = "#e7dff6"    # light purple for assistant
+    text_color = "#111111"      # dark text
+
+# Inject CSS
+st.markdown(f"""
+<style>
+.user-bubble {{
+    text-align: left;
+    background-color: {user_bg};
+    color: {text_color};
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}}
+.assistant-bubble {{
+    text-align: left;
+    background-color: {assistant_bg};
+    color: {text_color};
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}}
+body {{
+    font-family: Georgia, serif;
+    background-color: {'#111111' if theme == 'dark' else '#F5F0FF'};
+}}
+</style>
+""", unsafe_allow_html=True)
