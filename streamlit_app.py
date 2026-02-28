@@ -40,7 +40,7 @@ def save_messages():
 # -----------------------------
 # Page setup and CSS
 # -----------------------------
-st.set_page_config(page_title="AI Ethics Chatbot", page_icon="🍀", layout="wide")
+st.set_page_config(page_title="AI Ethics Guide", page_icon="🍀", layout="wide")
 
 st.markdown("""
 <style>
